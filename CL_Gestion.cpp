@@ -18,11 +18,14 @@ CL_Gestion::CL_Gestion(String^ N, String^ Adr, String^ CP, String^ Vi, String^ D
 	TotalTTC = TTTC;
 }
 
+//String^ CL_Gestion::AfficherFacture() {
+	//String^ Request = "SELECT * FROM Facture WHERE Nom LIKE '" + Nom + "%' AND Adresse LIKE '" + Adresse + "%' AND CodePostal LIKE '" + CodePostal + "%' AND Ville LIKE '" + Ville + "%' AND DateCommande LIKE '" + DateCommande + "%' AND Designation LIKE '" + Designation + "%' AND Quantite LIKE '" + Quantite + "%' AND PrixUnitaire LIKE '" + PrixUnitaire + "%' AND TotalHT LIKE '" + TotalHT + "%' AND TotalTTC LIKE '" + TotalTTC + "%'; ";
+	//return Request;
+//}
 String^ CL_Gestion::AfficherFacture() {
-	String^ Requete = "SELECT * FROM Facture WHERE Nom LIKE '" + Nom + "%' AND Adresse LIKE '" + Adresse + "%' AND CodePostal LIKE '" + CodePostal + "%' AND Ville LIKE '" + Ville + "%' AND DateCommande LIKE '" + DateCommande + "%' AND Designation LIKE '" + Designation + "%' AND Quantite LIKE '" + Quantite + "%' AND PrixUnitaire LIKE '" + PrixUnitaire + "%' AND TotalHT LIKE '" + TotalHT + "%' AND TotalTTC LIKE '" + TotalTTC + "%'; ";
-	return Requete;
+	String^ Request = "SELECT * FROM Facture WHERE NOM LIKE '" + Nom + "%' AND Adresse LIKE '" + Adresse + "%' AND CodePostal LIKE '" + CodePostal + "%' AND Ville LIKE '" + Ville + "%' ";
+	return Request;
 }
-
 void CL_Gestion::CreerFacture(SqlConnection^ Connect) {
 		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom, Adresse, CodePostal, Ville, DateCommande, Designation, Quantite, PrixUnitaire, TotalHT, TotalTTC) VALUES ('" + Nom + "', '" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + DateCommande + "', '" + Designation + "', '" + Quantite + "', '" + PrixUnitaire + "', '" + TotalHT + "', '" + TotalTTC +"')", Connect);
 		command->ExecuteNonQuery();
