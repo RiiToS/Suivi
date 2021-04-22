@@ -1,5 +1,6 @@
 #pragma once
 #include "CL_Gestion.h"
+#include "SQL.h"
 namespace Suivi {
 
 	using namespace System;
@@ -216,6 +217,7 @@ namespace Suivi {
 			   this->button6->TabIndex = 40;
 			   this->button6->Text = L"Relance";
 			   this->button6->UseVisualStyleBackColor = true;
+			   this->button6->Click += gcnew System::EventHandler(this, &Gestion::button6_Click);
 			   // 
 			   // button5
 			   // 
@@ -503,6 +505,19 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;
 	delete ds;
 	delete da;
+}
+
+	   void displayDGV(String^ query) {
+		   da = gcnew SqlDataAdapter(query, link);
+		   ds = gcnew DataSet();
+		   da->Fill(ds, "Display");
+		   dataGridView1->DataSource = ds->Tables["Display"]->DefaultView;
+		   delete da;
+		   delete ds;
+	   }
+
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	displayDGV(Relance());
 }
 };
 }

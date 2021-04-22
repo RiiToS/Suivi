@@ -135,6 +135,9 @@
     <ClInclude Include="Menu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SQL.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Gestion.resx">
