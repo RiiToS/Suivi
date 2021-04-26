@@ -69,7 +69,7 @@ namespace Suivi {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(9, 40);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(82, 41);
 			this->button1->TabIndex = 0;
@@ -80,7 +80,7 @@ namespace Suivi {
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(183, 85);
-			this->button6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button6->Margin = System::Windows::Forms::Padding(2);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(82, 41);
 			this->button6->TabIndex = 5;
@@ -106,9 +106,10 @@ namespace Suivi {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Menu";
-			this->Text = L"MyForm";
+			this->Text = L"Gestion";
+			this->Load += gcnew System::EventHandler(this, &Menu::Menu_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -125,5 +126,7 @@ namespace Suivi {
 		Close();
 	}
 
-	};
+	private: System::Void Menu_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

@@ -8,17 +8,19 @@ ref class CL_Gestion
 {
 private:
 	static String^ Nom;
+	static String^ Prenom;
 	static String^ Adresse;
 	static String^ CodePostal;
 	static String^ Ville;
 	static String^ DateCommande;
-	static String^ Designation;
+	static String^ Marque;
+	static String^ Type;
 	static int Quantite;
 	static float PrixUnitaire;
 	static float TotalHT;
 	static float TotalTTC;
 public:
-	CL_Gestion(String^ N, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Dsg, int Qt, float PU, float THT, float TTTC);
+	CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, float PU, float THT, float TTTC);
 	String^ AfficherFacture();
 	void CreerFacture(SqlConnection^ Connect);
 	void ModifierFacture(SqlConnection^ Connect, String^ IDBuffer);
