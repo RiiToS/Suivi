@@ -55,7 +55,7 @@ namespace Suivi {
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox5;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
@@ -77,8 +77,12 @@ namespace Suivi {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
 	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+
 
 
 
@@ -107,7 +111,7 @@ namespace Suivi {
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			   this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			   this->button7 = (gcnew System::Windows::Forms::Button());
 			   this->label12 = (gcnew System::Windows::Forms::Label());
 			   this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			   this->label11 = (gcnew System::Windows::Forms::Label());
@@ -120,7 +124,6 @@ namespace Suivi {
 			   this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			   this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			   this->label10 = (gcnew System::Windows::Forms::Label());
-			   this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			   this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			   this->button4 = (gcnew System::Windows::Forms::Button());
 			   this->button3 = (gcnew System::Windows::Forms::Button());
@@ -133,6 +136,8 @@ namespace Suivi {
 			   this->label5 = (gcnew System::Windows::Forms::Label());
 			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			   this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			   this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			   this->groupBox1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
@@ -184,7 +189,9 @@ namespace Suivi {
 			   // 
 			   // groupBox1
 			   // 
-			   this->groupBox1->Controls->Add(this->textBox7);
+			   this->groupBox1->Controls->Add(this->comboBox2);
+			   this->groupBox1->Controls->Add(this->comboBox1);
+			   this->groupBox1->Controls->Add(this->button7);
 			   this->groupBox1->Controls->Add(this->label12);
 			   this->groupBox1->Controls->Add(this->textBox6);
 			   this->groupBox1->Controls->Add(this->label11);
@@ -197,7 +204,6 @@ namespace Suivi {
 			   this->groupBox1->Controls->Add(this->numericUpDown2);
 			   this->groupBox1->Controls->Add(this->textBox4);
 			   this->groupBox1->Controls->Add(this->label10);
-			   this->groupBox1->Controls->Add(this->textBox5);
 			   this->groupBox1->Controls->Add(this->dateTimePicker1);
 			   this->groupBox1->Controls->Add(this->button4);
 			   this->groupBox1->Controls->Add(this->button3);
@@ -216,18 +222,21 @@ namespace Suivi {
 			   this->groupBox1->Controls->Add(this->textBox2);
 			   this->groupBox1->Location = System::Drawing::Point(21, 12);
 			   this->groupBox1->Name = L"groupBox1";
-			   this->groupBox1->Size = System::Drawing::Size(275, 641);
+			   this->groupBox1->Size = System::Drawing::Size(274, 720);
 			   this->groupBox1->TabIndex = 6;
 			   this->groupBox1->TabStop = false;
 			   this->groupBox1->Text = L"Client";
 			   this->groupBox1->Enter += gcnew System::EventHandler(this, &Gestion::groupBox1_Enter);
 			   // 
-			   // textBox7
+			   // button7
 			   // 
-			   this->textBox7->Location = System::Drawing::Point(5, 316);
-			   this->textBox7->Name = L"textBox7";
-			   this->textBox7->Size = System::Drawing::Size(243, 20);
-			   this->textBox7->TabIndex = 43;
+			   this->button7->Location = System::Drawing::Point(110, 592);
+			   this->button7->Name = L"button7";
+			   this->button7->Size = System::Drawing::Size(86, 30);
+			   this->button7->TabIndex = 45;
+			   this->button7->Text = L"Annuler";
+			   this->button7->UseVisualStyleBackColor = true;
+			   this->button7->Click += gcnew System::EventHandler(this, &Gestion::button7_Click);
 			   // 
 			   // label12
 			   // 
@@ -256,7 +265,7 @@ namespace Suivi {
 			   // 
 			   // button6
 			   // 
-			   this->button6->Location = System::Drawing::Point(9, 598);
+			   this->button6->Location = System::Drawing::Point(9, 592);
 			   this->button6->Name = L"button6";
 			   this->button6->Size = System::Drawing::Size(86, 30);
 			   this->button6->TabIndex = 40;
@@ -334,13 +343,6 @@ namespace Suivi {
 			   this->label10->Text = L"Ville";
 			   this->label10->Click += gcnew System::EventHandler(this, &Gestion::label10_Click);
 			   // 
-			   // textBox5
-			   // 
-			   this->textBox5->Location = System::Drawing::Point(5, 277);
-			   this->textBox5->Name = L"textBox5";
-			   this->textBox5->Size = System::Drawing::Size(243, 20);
-			   this->textBox5->TabIndex = 8;
-			   // 
 			   // dateTimePicker1
 			   // 
 			   this->dateTimePicker1->Location = System::Drawing::Point(5, 238);
@@ -350,11 +352,11 @@ namespace Suivi {
 			   // 
 			   // button4
 			   // 
-			   this->button4->Location = System::Drawing::Point(110, 598);
+			   this->button4->Location = System::Drawing::Point(110, 627);
 			   this->button4->Name = L"button4";
 			   this->button4->Size = System::Drawing::Size(86, 30);
 			   this->button4->TabIndex = 23;
-			   this->button4->Text = L"Annuler";
+			   this->button4->Text = L"Quitter";
 			   this->button4->UseVisualStyleBackColor = true;
 			   this->button4->Click += gcnew System::EventHandler(this, &Gestion::button4_Click);
 			   // 
@@ -456,6 +458,25 @@ namespace Suivi {
 			   this->dataGridView1->TabIndex = 7;
 			   this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gestion::dataGridView1_CellContentClick);
 			   // 
+			   // comboBox1
+			   // 
+			   this->comboBox1->FormattingEnabled = true;
+			   this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Sacs", L"Palette" });
+			   this->comboBox1->Location = System::Drawing::Point(5, 277);
+			   this->comboBox1->Name = L"comboBox1";
+			   this->comboBox1->Size = System::Drawing::Size(243, 21);
+			   this->comboBox1->TabIndex = 8;
+			   this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Gestion::comboBox1_SelectedIndexChanged_1);
+			   // 
+			   // comboBox2
+			   // 
+			   this->comboBox2->FormattingEnabled = true;
+			   this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"SVG\t", L"PIVETEAU" });
+			   this->comboBox2->Location = System::Drawing::Point(5, 315);
+			   this->comboBox2->Name = L"comboBox2";
+			   this->comboBox2->Size = System::Drawing::Size(243, 21);
+			   this->comboBox2->TabIndex = 46;
+			   // 
 			   // Gestion
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -476,11 +497,24 @@ namespace Suivi {
 
 		   }
 #pragma endregion
-
+		   private:
+			   void CancelFacture(void) {
+				   this->textBox1->Text = "";
+				   this->textBox2->Text = "";
+				   this->textBox3->Text = "";
+				   this->textBox4->Text = "";
+				   this->comboBox1->Text = "";
+				   this->textBox6->Text = "";
+				   this->comboBox2->Text = "";
+				   this->numericUpDown4->Value = 0;
+				   this->numericUpDown2->Value = 0;
+				   this->numericUpDown3->Value = 0;
+				   this->numericUpDown5->Value = 0;
+			   }
 	
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	if((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(textBox5->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+	if((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 			nouvFact.CreerFacture(link);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -501,8 +535,8 @@ namespace Suivi {
 		textBox2->Text = row->Cells["Adresse"]->Value->ToString();
 		textBox3->Text = row->Cells["CodePostal"]->Value->ToString();
 		textBox4->Text = row->Cells["Ville"]->Value->ToString();
-		textBox5->Text = row->Cells["Type"]->Value->ToString();
-		textBox7->Text = row->Cells["Marque"]->Value->ToString();
+		comboBox1->Text = row->Cells["Type"]->Value->ToString();
+		comboBox2->Text = row->Cells["Marque"]->Value->ToString();
 		numericUpDown2->Value = Convert::ToDecimal(row->Cells["Quantite"]->Value);
 		numericUpDown3->Value = Convert::ToDecimal(row->Cells["Prixunitaire"]->Value);
 		numericUpDown4->Value = Convert::ToDecimal(row->Cells["TotalHT"]->Value);
@@ -517,8 +551,8 @@ namespace Suivi {
 		this->Close();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(textBox5->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 			nouvFact.ModifierFacture(link, ID_Tampon);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -535,7 +569,7 @@ namespace Suivi {
 
 
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 	String^ Request = nouvFact.AfficherFacture();						 //methode afficherPersonnel renvoie la requete sous forme de String
 	SqlDataAdapter^ da = gcnew SqlDataAdapter(Request, link);
 	DataSet^ ds = gcnew DataSet();
@@ -545,7 +579,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	delete da;
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text, textBox6->Text, textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, textBox6->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 	nouveauPers.SupprimerFacture(link, ID_Tampon);
 	SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 	DataSet^ ds = gcnew DataSet();
@@ -568,6 +602,14 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	displayDGV(Relance());
 }
 private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	CancelFacture();
+}
+
+private: System::Void comboBox1_SelectedIndexChanged_1(System::Object^ sender, System::EventArgs^ e) {
+
+
 }
 };
 }
