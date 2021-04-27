@@ -5,7 +5,7 @@ using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 
-CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, float PU, float THT, float TTTC) {
+CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU, String^ THT, String^ TTTC) {
 	Nom = N;
 	Prenom = P;
 	Adresse = Adr;

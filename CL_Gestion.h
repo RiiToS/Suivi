@@ -16,11 +16,11 @@ private:
 	static String^ Marque;
 	static String^ Type;
 	static int Quantite;
-	static float PrixUnitaire;
-	static float TotalHT;
-	static float TotalTTC;
+	static String^ PrixUnitaire;
+	static String^ TotalHT;
+	static String^ TotalTTC;
 public:
-	CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, float PU, float THT, float TTTC);
+	CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU, String^ THT, String^ TTTC);
 	String^ AfficherFacture();
 	void CreerFacture(SqlConnection^ Connect);
 	void ModifierFacture(SqlConnection^ Connect, String^ IDBuffer);

@@ -96,7 +96,7 @@ namespace Suivi {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(161, 26);
 			this->label1->TabIndex = 6;
-			this->label1->Text = L"\tBienvenue François, veuillez\nséléctionner l\'opération souhaité.";
+			this->label1->Text = L"\tBienvenue, veuillez\r\nséléctionner l\'opération souhaité.";
 			// 
 			// Menu
 			// 

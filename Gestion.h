@@ -480,7 +480,7 @@ namespace Suivi {
 	
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(textBox5->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, (float)numericUpDown3->Value, (float)numericUpDown4->Value, (float)numericUpDown5->Value);
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 			nouvFact.CreerFacture(link);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -518,7 +518,7 @@ namespace Suivi {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(textBox5->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, (float)numericUpDown3->Value, (float)numericUpDown4->Value, (float)numericUpDown5->Value);
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 			nouvFact.ModifierFacture(link, ID_Tampon);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -535,7 +535,7 @@ namespace Suivi {
 
 
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, (float)numericUpDown3->Value, (float)numericUpDown4->Value, (float)numericUpDown5->Value);
+	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text,  textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 	String^ Request = nouvFact.AfficherFacture();						 //methode afficherPersonnel renvoie la requete sous forme de String
 	SqlDataAdapter^ da = gcnew SqlDataAdapter(Request, link);
 	DataSet^ ds = gcnew DataSet();
@@ -545,7 +545,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	delete da;
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text, textBox6->Text, textBox7->Text, (int)numericUpDown2->Value, (float)numericUpDown3->Value, (float)numericUpDown4->Value, (float)numericUpDown5->Value);
+	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), textBox5->Text, textBox6->Text, textBox7->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
 	nouveauPers.SupprimerFacture(link, ID_Tampon);
 	SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 	DataSet^ ds = gcnew DataSet();
