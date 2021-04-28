@@ -5,7 +5,7 @@ using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 
-CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU, String^ THT, String^ TTTC) {
+CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU,String^ TTTC, String^ Com) {
 	Nom = N;
 	Prenom = P;
 	Adresse = Adr;
@@ -15,8 +15,9 @@ CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi
 	Marque = Mrq;
 	Type = Ty;
 	Quantite = Qt;
+	Commentaire = Com;
 	PrixUnitaire = PU;
-	TotalHT = THT;
+
 	TotalTTC = TTTC;
 }
 
@@ -29,13 +30,13 @@ String^ CL_Gestion::AfficherFacture() {
 	return Request;
 }
 void CL_Gestion::CreerFacture(SqlConnection^ Connect) {
-		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom,Prenom, Adresse, CodePostal, Ville, DateCommande, Type, Marque, Quantite, PrixUnitaire, TotalHT, TotalTTC) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + DateCommande + "', '" + Type + "', '"+ Marque + "', '"  + Quantite + "', '" + PrixUnitaire + "', '" + TotalHT + "', '" + TotalTTC +"')", Connect);
+		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom,Prenom, Adresse, CodePostal, Ville, DateCommande, Type, Marque, Quantite, PrixUnitaire, TotalTTC, Commentaire) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + DateCommande + "', '" + Type + "', '"+ Marque + "', '"  + Quantite + "', '" + PrixUnitaire + "', '" + TotalTTC +"' , '" + Commentaire + "')", Connect);
 		command->ExecuteNonQuery();
 
 }
 
 void CL_Gestion::ModifierFacture(SqlConnection^ Connect, String^ IDBuffer) {
-		SqlCommand^ command = gcnew SqlCommand("UPDATE Facture SET Nom = '" + Nom + "' , Prenom = '" + Prenom + "', Adresse = '" + Adresse + "', CodePostal = '" + CodePostal + "', Ville = '" + Ville + "',DateCommande = '" + DateCommande + "',Type = '" + Type +"',Marque = '" + Marque +  "',Quantite = '" + Quantite + "',PrixUnitaire = '" + PrixUnitaire + "',TotalHT = '" + TotalHT + "',TotalTTC = '" + TotalTTC + "' WHERE ID = '" + IDBuffer + "'", Connect);
+		SqlCommand^ command = gcnew SqlCommand("UPDATE Facture SET Nom = '" + Nom + "' , Prenom = '" + Prenom + "', Adresse = '" + Adresse + "', CodePostal = '" + CodePostal + "', Ville = '" + Ville + "',DateCommande = '" + DateCommande + "',Type = '" + Type +"',Marque = '" + Marque +  "',Quantite = '" + Quantite + "',PrixUnitaire = '" + PrixUnitaire + "',TotalTTC = '" + TotalTTC + "',Commentaire = '" + Commentaire + "' WHERE ID = '" + IDBuffer + "'", Connect);
 		command->ExecuteNonQuery();
 	
 }

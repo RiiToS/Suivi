@@ -58,7 +58,7 @@ namespace Suivi {
 
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label8;
+
 	private: System::Windows::Forms::Label^ label9;	
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button4;
@@ -69,7 +69,7 @@ namespace Suivi {
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 	private: System::Windows::Forms::TextBox^ textBox3;
@@ -82,6 +82,7 @@ namespace Suivi {
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 
 
 
@@ -111,6 +112,9 @@ namespace Suivi {
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			   this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			   this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			   this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			   this->button7 = (gcnew System::Windows::Forms::Button());
 			   this->label12 = (gcnew System::Windows::Forms::Label());
 			   this->textBox6 = (gcnew System::Windows::Forms::TextBox());
@@ -119,7 +123,6 @@ namespace Suivi {
 			   this->button5 = (gcnew System::Windows::Forms::Button());
 			   this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			   this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
-			   this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
 			   this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			   this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			   this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -130,17 +133,13 @@ namespace Suivi {
 			   this->button2 = (gcnew System::Windows::Forms::Button());
 			   this->button1 = (gcnew System::Windows::Forms::Button());
 			   this->label7 = (gcnew System::Windows::Forms::Label());
-			   this->label8 = (gcnew System::Windows::Forms::Label());
 			   this->label9 = (gcnew System::Windows::Forms::Label());
 			   this->label6 = (gcnew System::Windows::Forms::Label());
 			   this->label5 = (gcnew System::Windows::Forms::Label());
 			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			   this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			   this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			   this->groupBox1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -189,6 +188,7 @@ namespace Suivi {
 			   // 
 			   // groupBox1
 			   // 
+			   this->groupBox1->Controls->Add(this->richTextBox1);
 			   this->groupBox1->Controls->Add(this->comboBox2);
 			   this->groupBox1->Controls->Add(this->comboBox1);
 			   this->groupBox1->Controls->Add(this->button7);
@@ -199,7 +199,6 @@ namespace Suivi {
 			   this->groupBox1->Controls->Add(this->button5);
 			   this->groupBox1->Controls->Add(this->textBox3);
 			   this->groupBox1->Controls->Add(this->numericUpDown5);
-			   this->groupBox1->Controls->Add(this->numericUpDown4);
 			   this->groupBox1->Controls->Add(this->numericUpDown3);
 			   this->groupBox1->Controls->Add(this->numericUpDown2);
 			   this->groupBox1->Controls->Add(this->textBox4);
@@ -210,7 +209,6 @@ namespace Suivi {
 			   this->groupBox1->Controls->Add(this->button2);
 			   this->groupBox1->Controls->Add(this->button1);
 			   this->groupBox1->Controls->Add(this->label7);
-			   this->groupBox1->Controls->Add(this->label8);
 			   this->groupBox1->Controls->Add(this->label9);
 			   this->groupBox1->Controls->Add(this->label6);
 			   this->groupBox1->Controls->Add(this->label5);
@@ -220,17 +218,48 @@ namespace Suivi {
 			   this->groupBox1->Controls->Add(this->label1);
 			   this->groupBox1->Controls->Add(this->label2);
 			   this->groupBox1->Controls->Add(this->textBox2);
-			   this->groupBox1->Location = System::Drawing::Point(21, 12);
+			   this->groupBox1->Location = System::Drawing::Point(12, 12);
 			   this->groupBox1->Name = L"groupBox1";
-			   this->groupBox1->Size = System::Drawing::Size(274, 720);
+			   this->groupBox1->Size = System::Drawing::Size(270, 769);
 			   this->groupBox1->TabIndex = 6;
 			   this->groupBox1->TabStop = false;
 			   this->groupBox1->Text = L"Client";
 			   this->groupBox1->Enter += gcnew System::EventHandler(this, &Gestion::groupBox1_Enter);
 			   // 
+			   // richTextBox1
+			   // 
+			   this->richTextBox1->Location = System::Drawing::Point(5, 469);
+			   this->richTextBox1->Name = L"richTextBox1";
+			   this->richTextBox1->Size = System::Drawing::Size(243, 96);
+			   this->richTextBox1->TabIndex = 47;
+			   this->richTextBox1->Text = L"";
+			   this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &Gestion::richTextBox1_TextChanged);
+			   // 
+			   // comboBox2
+			   // 
+			   this->comboBox2->FormattingEnabled = true;
+			   this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
+				   L"SVG Granulés", L"PIVETEAU Granulés", L"SVG Buches Compressées ",
+					   L"PIVETEAU Buches Compressées ", L"Bois 50", L"Bois 33", L"Bois 22"
+			   });
+			   this->comboBox2->Location = System::Drawing::Point(5, 315);
+			   this->comboBox2->Name = L"comboBox2";
+			   this->comboBox2->Size = System::Drawing::Size(243, 21);
+			   this->comboBox2->TabIndex = 46;
+			   // 
+			   // comboBox1
+			   // 
+			   this->comboBox1->FormattingEnabled = true;
+			   this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Sacs", L"Palette", L"Stères", L"Fagot" });
+			   this->comboBox1->Location = System::Drawing::Point(5, 277);
+			   this->comboBox1->Name = L"comboBox1";
+			   this->comboBox1->Size = System::Drawing::Size(243, 21);
+			   this->comboBox1->TabIndex = 8;
+			   this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Gestion::comboBox1_SelectedIndexChanged_1);
+			   // 
 			   // button7
 			   // 
-			   this->button7->Location = System::Drawing::Point(110, 592);
+			   this->button7->Location = System::Drawing::Point(9, 698);
 			   this->button7->Name = L"button7";
 			   this->button7->Size = System::Drawing::Size(86, 30);
 			   this->button7->TabIndex = 45;
@@ -265,7 +294,7 @@ namespace Suivi {
 			   // 
 			   // button6
 			   // 
-			   this->button6->Location = System::Drawing::Point(9, 592);
+			   this->button6->Location = System::Drawing::Point(101, 626);
 			   this->button6->Name = L"button6";
 			   this->button6->Size = System::Drawing::Size(86, 30);
 			   this->button6->TabIndex = 40;
@@ -275,7 +304,7 @@ namespace Suivi {
 			   // 
 			   // button5
 			   // 
-			   this->button5->Location = System::Drawing::Point(110, 556);
+			   this->button5->Location = System::Drawing::Point(9, 662);
 			   this->button5->Name = L"button5";
 			   this->button5->Size = System::Drawing::Size(86, 30);
 			   this->button5->TabIndex = 39;
@@ -293,20 +322,11 @@ namespace Suivi {
 			   // numericUpDown5
 			   // 
 			   this->numericUpDown5->DecimalPlaces = 2;
-			   this->numericUpDown5->Location = System::Drawing::Point(6, 481);
+			   this->numericUpDown5->Location = System::Drawing::Point(6, 433);
 			   this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
 			   this->numericUpDown5->Name = L"numericUpDown5";
 			   this->numericUpDown5->Size = System::Drawing::Size(242, 20);
 			   this->numericUpDown5->TabIndex = 37;
-			   // 
-			   // numericUpDown4
-			   // 
-			   this->numericUpDown4->DecimalPlaces = 2;
-			   this->numericUpDown4->Location = System::Drawing::Point(5, 433);
-			   this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
-			   this->numericUpDown4->Name = L"numericUpDown4";
-			   this->numericUpDown4->Size = System::Drawing::Size(243, 20);
-			   this->numericUpDown4->TabIndex = 36;
 			   // 
 			   // numericUpDown3
 			   // 
@@ -352,7 +372,7 @@ namespace Suivi {
 			   // 
 			   // button4
 			   // 
-			   this->button4->Location = System::Drawing::Point(110, 627);
+			   this->button4->Location = System::Drawing::Point(9, 734);
 			   this->button4->Name = L"button4";
 			   this->button4->Size = System::Drawing::Size(86, 30);
 			   this->button4->TabIndex = 23;
@@ -362,7 +382,7 @@ namespace Suivi {
 			   // 
 			   // button3
 			   // 
-			   this->button3->Location = System::Drawing::Point(8, 556);
+			   this->button3->Location = System::Drawing::Point(9, 626);
 			   this->button3->Name = L"button3";
 			   this->button3->Size = System::Drawing::Size(86, 30);
 			   this->button3->TabIndex = 22;
@@ -372,7 +392,7 @@ namespace Suivi {
 			   // 
 			   // button2
 			   // 
-			   this->button2->Location = System::Drawing::Point(8, 520);
+			   this->button2->Location = System::Drawing::Point(7, 590);
 			   this->button2->Name = L"button2";
 			   this->button2->Size = System::Drawing::Size(86, 30);
 			   this->button2->TabIndex = 21;
@@ -382,7 +402,7 @@ namespace Suivi {
 			   // 
 			   // button1
 			   // 
-			   this->button1->Location = System::Drawing::Point(110, 520);
+			   this->button1->Location = System::Drawing::Point(101, 590);
 			   this->button1->Name = L"button1";
 			   this->button1->Size = System::Drawing::Size(86, 30);
 			   this->button1->TabIndex = 20;
@@ -399,19 +419,10 @@ namespace Suivi {
 			   this->label7->TabIndex = 19;
 			   this->label7->Text = L"Prix unitaire";
 			   // 
-			   // label8
-			   // 
-			   this->label8->AutoSize = true;
-			   this->label8->Location = System::Drawing::Point(6, 417);
-			   this->label8->Name = L"label8";
-			   this->label8->Size = System::Drawing::Size(49, 13);
-			   this->label8->TabIndex = 17;
-			   this->label8->Text = L"Total HT";
-			   // 
 			   // label9
 			   // 
 			   this->label9->AutoSize = true;
-			   this->label9->Location = System::Drawing::Point(6, 465);
+			   this->label9->Location = System::Drawing::Point(6, 417);
 			   this->label9->Name = L"label9";
 			   this->label9->Size = System::Drawing::Size(55, 13);
 			   this->label9->TabIndex = 15;
@@ -447,41 +458,22 @@ namespace Suivi {
 			   // dataGridView1
 			   // 
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			   this->dataGridView1->Location = System::Drawing::Point(331, 34);
+			   this->dataGridView1->Location = System::Drawing::Point(322, 50);
 			   this->dataGridView1->MultiSelect = false;
 			   this->dataGridView1->Name = L"dataGridView1";
 			   this->dataGridView1->ReadOnly = true;
 			   this->dataGridView1->RowHeadersWidth = 51;
-			   this->dataGridView1->RowTemplate->Height = 24;
+			   this->dataGridView1->RowTemplate->Height = 48;
 			   this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			   this->dataGridView1->Size = System::Drawing::Size(1044, 619);
+			   this->dataGridView1->Size = System::Drawing::Size(1123, 726);
 			   this->dataGridView1->TabIndex = 7;
 			   this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gestion::dataGridView1_CellContentClick);
-			   // 
-			   // comboBox1
-			   // 
-			   this->comboBox1->FormattingEnabled = true;
-			   this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Sacs", L"Palette" });
-			   this->comboBox1->Location = System::Drawing::Point(5, 277);
-			   this->comboBox1->Name = L"comboBox1";
-			   this->comboBox1->Size = System::Drawing::Size(243, 21);
-			   this->comboBox1->TabIndex = 8;
-			   this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Gestion::comboBox1_SelectedIndexChanged_1);
-			   // 
-			   // comboBox2
-			   // 
-			   this->comboBox2->FormattingEnabled = true;
-			   this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"SVG\t", L"PIVETEAU" });
-			   this->comboBox2->Location = System::Drawing::Point(5, 315);
-			   this->comboBox2->Name = L"comboBox2";
-			   this->comboBox2->Size = System::Drawing::Size(243, 21);
-			   this->comboBox2->TabIndex = 46;
 			   // 
 			   // Gestion
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->ClientSize = System::Drawing::Size(1407, 765);
+			   this->ClientSize = System::Drawing::Size(1584, 861);
 			   this->Controls->Add(this->dataGridView1);
 			   this->Controls->Add(this->groupBox1);
 			   this->Name = L"Gestion";
@@ -489,7 +481,6 @@ namespace Suivi {
 			   this->groupBox1->ResumeLayout(false);
 			   this->groupBox1->PerformLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
-			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -506,15 +497,15 @@ namespace Suivi {
 				   this->comboBox1->Text = "";
 				   this->textBox6->Text = "";
 				   this->comboBox2->Text = "";
-				   this->numericUpDown4->Value = 0;
 				   this->numericUpDown2->Value = 0;
 				   this->numericUpDown3->Value = 0;
 				   this->numericUpDown5->Value = 0;
+				   this->richTextBox1->Text = "";
 			   }
 	
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
 			nouvFact.CreerFacture(link);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -539,10 +530,10 @@ namespace Suivi {
 		comboBox2->Text = row->Cells["Marque"]->Value->ToString();
 		numericUpDown2->Value = Convert::ToDecimal(row->Cells["Quantite"]->Value);
 		numericUpDown3->Value = Convert::ToDecimal(row->Cells["Prixunitaire"]->Value);
-		numericUpDown4->Value = Convert::ToDecimal(row->Cells["TotalHT"]->Value);
 		numericUpDown5->Value = Convert::ToDecimal(row->Cells["TotalTTC"]->Value);
 		dateTimePicker1->Value = DateTime::ParseExact(row->Cells["DateCommande"]->Value->ToString()->Substring(0, 10), "dd/MM/yyyy", Globalization::CultureInfo::InvariantCulture);
 		ID_Tampon = row->Cells["ID"]->Value->ToString();
+		richTextBox1->Text = row->Cells["Commentaire"]->Value->ToString();
 	}
 	private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -552,7 +543,7 @@ namespace Suivi {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
 			nouvFact.ModifierFacture(link, ID_Tampon);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -569,7 +560,7 @@ namespace Suivi {
 
 
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
 	String^ Request = nouvFact.AfficherFacture();						 //methode afficherPersonnel renvoie la requete sous forme de String
 	SqlDataAdapter^ da = gcnew SqlDataAdapter(Request, link);
 	DataSet^ ds = gcnew DataSet();
@@ -579,7 +570,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	delete da;
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, textBox6->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown4->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."));
+	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, textBox6->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
 	nouveauPers.SupprimerFacture(link, ID_Tampon);
 	SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 	DataSet^ ds = gcnew DataSet();
@@ -610,6 +601,8 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void comboBox1_SelectedIndexChanged_1(System::Object^ sender, System::EventArgs^ e) {
 
 
+}
+private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
