@@ -18,7 +18,7 @@ namespace Suivi {
 	public:
 		Menu(void) {
 			InitializeComponent();
-			link = gcnew SqlConnection("Data Source=DESKTOP-4HPMNFU;Initial Catalog=Client;Integrated Security=True");
+			link = gcnew SqlConnection("Data Source=DESKTOP-4HPMNFU;Initial Catalog=Client;Integrated Security=True");//connection à la BDD
 			try { link->Open(); }
 			catch (SqlException^ ex) {
 				delete this;

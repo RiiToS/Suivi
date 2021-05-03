@@ -505,13 +505,13 @@ namespace Suivi {
 	
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);//valeur de gestion en paramètre
 			nouvFact.CreerFacture(link);
-			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
+			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);//selection de la table de la BDD
 			DataSet^ ds = gcnew DataSet();
 			da->Fill(ds, "Facture");
-			dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;
-			delete ds;
+			dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;//affichage gridview 
+			delete ds;//destruction constructeur
 			delete da;
 	}
 	else {
@@ -520,7 +520,7 @@ namespace Suivi {
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
-		DataGridViewRow^ row = dataGridView1->SelectedRows[0];
+		DataGridViewRow^ row = dataGridView1->SelectedRows[0];//configuration du datagridview et de son affichage
 		textBox1->Text = row->Cells["Nom"]->Value->ToString();
 		textBox6->Text = row->Cells["Prenom"]->Value->ToString();
 		textBox2->Text = row->Cells["Adresse"]->Value->ToString();
@@ -539,7 +539,7 @@ namespace Suivi {
 	}
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		this->Close();//fermeture
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
@@ -590,12 +590,12 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	   }
 
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	displayDGV(Relance());
+	displayDGV(Relance());//fonction pour afficher la requête SQL
 }
 private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	CancelFacture();
+	CancelFacture();//fonction cancel pour vider les textbox
 }
 
 private: System::Void comboBox1_SelectedIndexChanged_1(System::Object^ sender, System::EventArgs^ e) {
