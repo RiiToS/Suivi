@@ -246,7 +246,7 @@ namespace Suivi {
 			   this->richTextBox1->Size = System::Drawing::Size(243, 96);
 			   this->richTextBox1->TabIndex = 47;
 			   this->richTextBox1->Text = L"";
-			   this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &Gestion::richTextBox1_TextChanged);
+			   //this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &Gestion::richTextBox1_TextChanged);
 			   // 
 			   // comboBox2
 			   // 
@@ -268,7 +268,7 @@ namespace Suivi {
 			   this->comboBox1->Name = L"comboBox1";
 			   this->comboBox1->Size = System::Drawing::Size(243, 21);
 			   this->comboBox1->TabIndex = 7;
-			   this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Gestion::comboBox1_SelectedIndexChanged_1);
+			  // this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Gestion::comboBox1_SelectedIndexChanged_1);
 			   // 
 			   // button7
 			   // 
@@ -530,6 +530,18 @@ namespace Suivi {
 			delete ds;//destruction constructeur
 			delete da;
 			richTextBox2->Text = "L'ajout de la Facture a fonctionné";
+			this->textBox1->Text = "";
+			this->textBox2->Text = "";
+			this->textBox3->Text = "";
+			this->textBox4->Text = "";
+			this->comboBox1->Text = "";
+			this->textBox6->Text = "";
+			this->comboBox2->Text = "";
+			this->numericUpDown2->Value = 0;
+			this->numericUpDown3->Value = 0;
+			this->numericUpDown5->Value = 0;
+			this->richTextBox1->Text = "";
+			
 	}
 	else {
 		richTextBox2->Text = "L'ajout de la Facture n'a pas marché, veuillez remplir tous les champs";
