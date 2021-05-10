@@ -87,6 +87,7 @@ namespace Suivi {
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 
 
 
@@ -142,6 +143,7 @@ namespace Suivi {
 			   this->label5 = (gcnew System::Windows::Forms::Label());
 			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			   this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			   this->groupBox1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
@@ -162,6 +164,13 @@ namespace Suivi {
 			   this->textBox2->Name = L"textBox2";
 			   this->textBox2->Size = System::Drawing::Size(243, 20);
 			   this->textBox2->TabIndex = 2;
+			   // 
+			   // textBox6
+			   // 
+			   this->textBox6->Location = System::Drawing::Point(6, 77);
+			   this->textBox6->Name = L"textBox6";
+			   this->textBox6->Size = System::Drawing::Size(243, 20);
+			   this->textBox6->TabIndex = 1;
 			   // 
 			   // label1
 			   // 
@@ -279,13 +288,6 @@ namespace Suivi {
 			   this->label12->Size = System::Drawing::Size(43, 13);
 			   this->label12->TabIndex = 44;
 			   this->label12->Text = L"Marque";
-			   // 
-			   // textBox6
-			   // 
-			   this->textBox6->Location = System::Drawing::Point(6, 77);
-			   this->textBox6->Name = L"textBox6";
-			   this->textBox6->Size = System::Drawing::Size(243, 20);
-			   this->textBox6->TabIndex = 1;
 			   // 
 			   // label11
 			   // 
@@ -469,15 +471,24 @@ namespace Suivi {
 			   this->dataGridView1->RowHeadersWidth = 51;
 			   this->dataGridView1->RowTemplate->Height = 48;
 			   this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			   this->dataGridView1->Size = System::Drawing::Size(1123, 726);
+			   this->dataGridView1->Size = System::Drawing::Size(1250, 726);
 			   this->dataGridView1->TabIndex = 7;
 			   this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gestion::dataGridView1_CellContentClick);
+			   // 
+			   // richTextBox2
+			   // 
+			   this->richTextBox2->Location = System::Drawing::Point(381, 815);
+			   this->richTextBox2->Name = L"richTextBox2";
+			   this->richTextBox2->Size = System::Drawing::Size(1023, 96);
+			   this->richTextBox2->TabIndex = 8;
+			   this->richTextBox2->Text = L"";
 			   // 
 			   // Gestion
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->ClientSize = System::Drawing::Size(1584, 861);
+			   this->ClientSize = System::Drawing::Size(1584, 929);
+			   this->Controls->Add(this->richTextBox2);
 			   this->Controls->Add(this->dataGridView1);
 			   this->Controls->Add(this->groupBox1);
 			   this->Name = L"Gestion";
@@ -505,6 +516,7 @@ namespace Suivi {
 				   this->numericUpDown3->Value = 0;
 				   this->numericUpDown5->Value = 0;
 				   this->richTextBox1->Text = "";
+				   this->richTextBox2->Text = "";
 			   }
 	
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -517,9 +529,11 @@ namespace Suivi {
 			dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;//affichage gridview 
 			delete ds;//destruction constructeur
 			delete da;
+			richTextBox2->Text = "L'ajout de la Facture a fonctionné";
 	}
 	else {
-		this->Close();
+		richTextBox2->Text = "L'ajout de la Facture n'a pas marché, veuillez remplir tous les champs";
+	
 	}
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -555,9 +569,11 @@ namespace Suivi {
 			dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;
 			delete ds;
 			delete da;
+			richTextBox2->Text = "La modification de la Facture a fonctionné";
 		}
 		else {
-				this->Close();
+			richTextBox2->Text = "La modification de la Facture n'a fonctionné";
+			
 		}
 	
 	}
@@ -602,11 +618,5 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	CancelFacture();//fonction cancel pour vider les textbox
 }
 
-private: System::Void comboBox1_SelectedIndexChanged_1(System::Object^ sender, System::EventArgs^ e) {
-
-
-}
-private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
