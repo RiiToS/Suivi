@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="CL_Gestion.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="CL_Stats.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CL_Gestion.h">
@@ -138,6 +139,9 @@
     <ClInclude Include="SQL.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Stats.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Gestion.resx">
@@ -145,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats.resx">
+      <DependentUpon>Stats.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -91,6 +91,9 @@ namespace Suivi {
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::Label^ label13;
+
 
 
 
@@ -121,6 +124,8 @@ namespace Suivi {
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			   this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			   this->label13 = (gcnew System::Windows::Forms::Label());
 			   this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			   this->label8 = (gcnew System::Windows::Forms::Label());
 			   this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
@@ -206,6 +211,8 @@ namespace Suivi {
 			   // 
 			   // groupBox1
 			   // 
+			   this->groupBox1->Controls->Add(this->textBox5);
+			   this->groupBox1->Controls->Add(this->label13);
 			   this->groupBox1->Controls->Add(this->textBox7);
 			   this->groupBox1->Controls->Add(this->label8);
 			   this->groupBox1->Controls->Add(this->richTextBox1);
@@ -246,9 +253,25 @@ namespace Suivi {
 			   this->groupBox1->Text = L"Client";
 			   this->groupBox1->Enter += gcnew System::EventHandler(this, &Gestion::groupBox1_Enter);
 			   // 
+			   // textBox5
+			   // 
+			   this->textBox5->Location = System::Drawing::Point(6, 277);
+			   this->textBox5->Name = L"textBox5";
+			   this->textBox5->Size = System::Drawing::Size(243, 20);
+			   this->textBox5->TabIndex = 52;
+			   // 
+			   // label13
+			   // 
+			   this->label13->AutoSize = true;
+			   this->label13->Location = System::Drawing::Point(6, 261);
+			   this->label13->Name = L"label13";
+			   this->label13->Size = System::Drawing::Size(32, 13);
+			   this->label13->TabIndex = 51;
+			   this->label13->Text = L"Email";
+			   // 
 			   // textBox7
 			   // 
-			   this->textBox7->Location = System::Drawing::Point(6, 243);
+			   this->textBox7->Location = System::Drawing::Point(6, 238);
 			   this->textBox7->Name = L"textBox7";
 			   this->textBox7->Size = System::Drawing::Size(243, 20);
 			   this->textBox7->TabIndex = 50;
@@ -265,7 +288,7 @@ namespace Suivi {
 			   // 
 			   // richTextBox1
 			   // 
-			   this->richTextBox1->Location = System::Drawing::Point(6, 539);
+			   this->richTextBox1->Location = System::Drawing::Point(6, 619);
 			   this->richTextBox1->Name = L"richTextBox1";
 			   this->richTextBox1->Size = System::Drawing::Size(243, 96);
 			   this->richTextBox1->TabIndex = 47;
@@ -278,7 +301,7 @@ namespace Suivi {
 				   L"SGA Granulés", L"PIVETEAU Granulés", L"SGA Buches Compressées ",
 					   L"PIVETEAU Buches Compressées ", L"Bois 50", L"Bois 33", L"Bois 22"
 			   });
-			   this->comboBox2->Location = System::Drawing::Point(4, 359);
+			   this->comboBox2->Location = System::Drawing::Point(6, 393);
 			   this->comboBox2->Name = L"comboBox2";
 			   this->comboBox2->Size = System::Drawing::Size(243, 21);
 			   this->comboBox2->TabIndex = 8;
@@ -287,14 +310,14 @@ namespace Suivi {
 			   // 
 			   this->comboBox1->FormattingEnabled = true;
 			   this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Sacs", L"Palette", L"Stères", L"Fagot" });
-			   this->comboBox1->Location = System::Drawing::Point(4, 321);
+			   this->comboBox1->Location = System::Drawing::Point(6, 355);
 			   this->comboBox1->Name = L"comboBox1";
 			   this->comboBox1->Size = System::Drawing::Size(243, 21);
 			   this->comboBox1->TabIndex = 7;
 			   // 
 			   // button7
 			   // 
-			   this->button7->Location = System::Drawing::Point(8, 776);
+			   this->button7->Location = System::Drawing::Point(100, 793);
 			   this->button7->Name = L"button7";
 			   this->button7->Size = System::Drawing::Size(86, 30);
 			   this->button7->TabIndex = 21;
@@ -305,7 +328,7 @@ namespace Suivi {
 			   // label12
 			   // 
 			   this->label12->AutoSize = true;
-			   this->label12->Location = System::Drawing::Point(5, 344);
+			   this->label12->Location = System::Drawing::Point(6, 339);
 			   this->label12->Name = L"label12";
 			   this->label12->Size = System::Drawing::Size(43, 13);
 			   this->label12->TabIndex = 44;
@@ -322,7 +345,7 @@ namespace Suivi {
 			   // 
 			   // button6
 			   // 
-			   this->button6->Location = System::Drawing::Point(100, 704);
+			   this->button6->Location = System::Drawing::Point(100, 757);
 			   this->button6->Name = L"button6";
 			   this->button6->Size = System::Drawing::Size(86, 30);
 			   this->button6->TabIndex = 40;
@@ -332,7 +355,7 @@ namespace Suivi {
 			   // 
 			   // button5
 			   // 
-			   this->button5->Location = System::Drawing::Point(8, 740);
+			   this->button5->Location = System::Drawing::Point(9, 793);
 			   this->button5->Name = L"button5";
 			   this->button5->Size = System::Drawing::Size(86, 30);
 			   this->button5->TabIndex = 39;
@@ -351,7 +374,7 @@ namespace Suivi {
 			   // numericUpDown5
 			   // 
 			   this->numericUpDown5->DecimalPlaces = 2;
-			   this->numericUpDown5->Location = System::Drawing::Point(5, 477);
+			   this->numericUpDown5->Location = System::Drawing::Point(6, 511);
 			   this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
 			   this->numericUpDown5->Name = L"numericUpDown5";
 			   this->numericUpDown5->Size = System::Drawing::Size(242, 20);
@@ -360,7 +383,7 @@ namespace Suivi {
 			   // numericUpDown3
 			   // 
 			   this->numericUpDown3->DecimalPlaces = 2;
-			   this->numericUpDown3->Location = System::Drawing::Point(4, 438);
+			   this->numericUpDown3->Location = System::Drawing::Point(6, 472);
 			   this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
 			   this->numericUpDown3->Name = L"numericUpDown3";
 			   this->numericUpDown3->Size = System::Drawing::Size(243, 20);
@@ -369,7 +392,7 @@ namespace Suivi {
 			   // 
 			   // numericUpDown2
 			   // 
-			   this->numericUpDown2->Location = System::Drawing::Point(4, 399);
+			   this->numericUpDown2->Location = System::Drawing::Point(6, 433);
 			   this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
 			   this->numericUpDown2->Name = L"numericUpDown2";
 			   this->numericUpDown2->Size = System::Drawing::Size(243, 20);
@@ -394,14 +417,14 @@ namespace Suivi {
 			   // 
 			   // dateTimePicker1
 			   // 
-			   this->dateTimePicker1->Location = System::Drawing::Point(4, 282);
+			   this->dateTimePicker1->Location = System::Drawing::Point(6, 316);
 			   this->dateTimePicker1->Name = L"dateTimePicker1";
 			   this->dateTimePicker1->Size = System::Drawing::Size(243, 20);
 			   this->dateTimePicker1->TabIndex = 6;
 			   // 
 			   // button4
 			   // 
-			   this->button4->Location = System::Drawing::Point(8, 812);
+			   this->button4->Location = System::Drawing::Point(9, 829);
 			   this->button4->Name = L"button4";
 			   this->button4->Size = System::Drawing::Size(86, 30);
 			   this->button4->TabIndex = 23;
@@ -411,7 +434,7 @@ namespace Suivi {
 			   // 
 			   // button3
 			   // 
-			   this->button3->Location = System::Drawing::Point(8, 704);
+			   this->button3->Location = System::Drawing::Point(9, 757);
 			   this->button3->Name = L"button3";
 			   this->button3->Size = System::Drawing::Size(86, 30);
 			   this->button3->TabIndex = 22;
@@ -421,7 +444,7 @@ namespace Suivi {
 			   // 
 			   // button2
 			   // 
-			   this->button2->Location = System::Drawing::Point(6, 668);
+			   this->button2->Location = System::Drawing::Point(9, 721);
 			   this->button2->Name = L"button2";
 			   this->button2->Size = System::Drawing::Size(86, 30);
 			   this->button2->TabIndex = 20;
@@ -431,7 +454,7 @@ namespace Suivi {
 			   // 
 			   // button1
 			   // 
-			   this->button1->Location = System::Drawing::Point(100, 668);
+			   this->button1->Location = System::Drawing::Point(100, 721);
 			   this->button1->Name = L"button1";
 			   this->button1->Size = System::Drawing::Size(86, 30);
 			   this->button1->TabIndex = 45;
@@ -442,7 +465,7 @@ namespace Suivi {
 			   // label7
 			   // 
 			   this->label7->AutoSize = true;
-			   this->label7->Location = System::Drawing::Point(5, 422);
+			   this->label7->Location = System::Drawing::Point(6, 456);
 			   this->label7->Name = L"label7";
 			   this->label7->Size = System::Drawing::Size(61, 13);
 			   this->label7->TabIndex = 19;
@@ -451,7 +474,7 @@ namespace Suivi {
 			   // label9
 			   // 
 			   this->label9->AutoSize = true;
-			   this->label9->Location = System::Drawing::Point(5, 461);
+			   this->label9->Location = System::Drawing::Point(6, 495);
 			   this->label9->Name = L"label9";
 			   this->label9->Size = System::Drawing::Size(55, 13);
 			   this->label9->TabIndex = 15;
@@ -460,7 +483,7 @@ namespace Suivi {
 			   // label6
 			   // 
 			   this->label6->AutoSize = true;
-			   this->label6->Location = System::Drawing::Point(5, 383);
+			   this->label6->Location = System::Drawing::Point(6, 417);
 			   this->label6->Name = L"label6";
 			   this->label6->Size = System::Drawing::Size(47, 13);
 			   this->label6->TabIndex = 11;
@@ -469,7 +492,7 @@ namespace Suivi {
 			   // label5
 			   // 
 			   this->label5->AutoSize = true;
-			   this->label5->Location = System::Drawing::Point(3, 305);
+			   this->label5->Location = System::Drawing::Point(6, 377);
 			   this->label5->Name = L"label5";
 			   this->label5->Size = System::Drawing::Size(31, 13);
 			   this->label5->TabIndex = 9;
@@ -478,7 +501,7 @@ namespace Suivi {
 			   // label4
 			   // 
 			   this->label4->AutoSize = true;
-			   this->label4->Location = System::Drawing::Point(3, 266);
+			   this->label4->Location = System::Drawing::Point(6, 300);
 			   this->label4->Name = L"label4";
 			   this->label4->Size = System::Drawing::Size(100, 13);
 			   this->label4->TabIndex = 7;
@@ -487,14 +510,14 @@ namespace Suivi {
 			   // dataGridView1
 			   // 
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			   this->dataGridView1->Location = System::Drawing::Point(322, 50);
+			   this->dataGridView1->Location = System::Drawing::Point(291, 18);
 			   this->dataGridView1->MultiSelect = false;
 			   this->dataGridView1->Name = L"dataGridView1";
 			   this->dataGridView1->ReadOnly = true;
 			   this->dataGridView1->RowHeadersWidth = 51;
 			   this->dataGridView1->RowTemplate->Height = 48;
 			   this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			   this->dataGridView1->Size = System::Drawing::Size(1472, 726);
+			   this->dataGridView1->Size = System::Drawing::Size(1565, 866);
 			   this->dataGridView1->TabIndex = 7;
 			   this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gestion::dataGridView1_CellContentClick);
 			   // 
@@ -502,7 +525,7 @@ namespace Suivi {
 			   // 
 			   this->richTextBox2->Location = System::Drawing::Point(3, 988);
 			   this->richTextBox2->Name = L"richTextBox2";
-			   this->richTextBox2->Size = System::Drawing::Size(1411, 35);
+			   this->richTextBox2->Size = System::Drawing::Size(1863, 35);
 			   this->richTextBox2->TabIndex = 8;
 			   this->richTextBox2->Text = L"";
 			   // 
@@ -598,6 +621,7 @@ namespace Suivi {
 		this->Close();//fermeture
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (MessageBox::Show("Êtes vous sûr ?", "Validation", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
 			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
 			nouvFact.ModifierFacture(link, ID_Tampon);
@@ -625,9 +649,13 @@ namespace Suivi {
 			richTextBox2->Text = "La modification de la Facture n'a pas fonctionné";
 			
 		}
+		}
+		else{
+
+		}
+	
 	
 	}
-
 
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
@@ -642,6 +670,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, textBox6->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
+	if (MessageBox::Show("Êtes vous sûr ?", "Validation", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 	nouveauPers.SupprimerFacture(link, ID_Tampon);
 	SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 	DataSet^ ds = gcnew DataSet();
@@ -649,6 +678,10 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;
 	delete ds;
 	delete da;
+	}
+	else {
+		
+	}
 }
 
 	   void displayDGV(String^ query) {

@@ -1,5 +1,6 @@
 #pragma once
 using namespace System;
+
 namespace Suivi {
 	String^ Relance() {
 		//String^ Requete = "SELECT DateCommande FROM Facture WHERE DateCommande = NOW() - 11";

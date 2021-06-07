@@ -44,6 +44,7 @@ namespace Suivi {
 
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ button2;
 
 	private:
 		/// <summary>
@@ -64,11 +65,12 @@ namespace Suivi {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(9, 40);
+			this->button1->Location = System::Drawing::Point(11, 45);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(82, 41);
@@ -79,7 +81,7 @@ namespace Suivi {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(183, 85);
+			this->button6->Location = System::Drawing::Point(183, 45);
 			this->button6->Margin = System::Windows::Forms::Padding(2);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(82, 41);
@@ -98,11 +100,23 @@ namespace Suivi {
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"\tBienvenue, veuillez\r\nséléctionner l\'opération souhaité.";
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(97, 45);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(82, 41);
+			this->button2->TabIndex = 7;
+			this->button2->Text = L"Statistique";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Menu::button2_Click);
+			// 
 			// Menu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(274, 136);
+			this->ClientSize = System::Drawing::Size(276, 94);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button1);
@@ -128,5 +142,11 @@ namespace Suivi {
 
 	private: System::Void Menu_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Suivi::Gestion Gestion(link);
+	Gestion.ShowDialog();
+	this->Show();
+}
 };
 }
