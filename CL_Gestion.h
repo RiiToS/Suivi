@@ -13,6 +13,7 @@ private:
 	static String^ CodePostal;
 	static String^ Ville;
 	static String^ Telephone;
+	static String^ Email;
 	static String^ DateCommande;
 	static String^ Marque;
 	static String^ Type;
@@ -20,8 +21,9 @@ private:
 	static String^ PrixUnitaire;
 	static String^ TotalTTC;
 	static String^ Commentaire;
+	static String^ Etat;
 public:
-	CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ TEL, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU,String^ TTTC, String^ Com);
+	CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ TEL, String^ MAIL, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU,String^ TTTC, String^ Com, String^ ATM );
 	String^ AfficherFacture();
 	void CreerFacture(SqlConnection^ Connect);
 	void ModifierFacture(SqlConnection^ Connect, String^ IDBuffer);

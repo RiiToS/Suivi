@@ -5,21 +5,22 @@ using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 
-CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ TEL, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU,String^ TTTC, String^ Com) {
+CL_Gestion::CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ TEL, String^ MAIL, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU,String^ TTTC, String^ Com,String^ ATM ) {
 	Nom = N;
 	Prenom = P;
 	Adresse = Adr;
 	CodePostal = CP;
 	Ville = Vi;
 	Telephone = TEL;
+	Email = MAIL;
 	DateCommande = DC;
 	Marque = Mrq;
 	Type = Ty;
 	Quantite = Qt;
 	Commentaire = Com;
 	PrixUnitaire = PU;
-
 	TotalTTC = TTTC;
+	Etat = ATM;
 }
 
 //String^ CL_Gestion::AfficherFacture() {
@@ -31,13 +32,13 @@ String^ CL_Gestion::AfficherFacture() {//fonction affichage
 	return Request;
 }
 void CL_Gestion::CreerFacture(SqlConnection^ Connect) {//fonction créer 
-		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom,Prenom, Adresse, CodePostal, Ville,Telephone, DateCommande, Type, Marque, Quantite, PrixUnitaire, TotalTTC, Commentaire) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + Telephone + "', '" + DateCommande + "', '" + Type + "', '"+ Marque + "', '"  + Quantite + "', '" + PrixUnitaire + "', '" + TotalTTC +"' , '" + Commentaire + "')", Connect);
+		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom,Prenom, Adresse, CodePostal, Ville,Telephone,Email, DateCommande, Type, Marque, Quantite, PrixUnitaire, TotalTTC, Commentaire) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + Telephone + "', '" + Email + "','" + DateCommande + "', '" + Type + "', '"+ Marque + "', '"  + Quantite + "', '" + PrixUnitaire + "', '" + TotalTTC +"' , '" + Commentaire + "', '" + Etat + "')", Connect);
 		command->ExecuteNonQuery();
 
 }
 
 void CL_Gestion::ModifierFacture(SqlConnection^ Connect, String^ IDBuffer) {//fonction modifier
-		SqlCommand^ command = gcnew SqlCommand("UPDATE Facture SET Nom = '" + Nom + "' , Prenom = '" + Prenom + "', Adresse = '" + Adresse + "', CodePostal = '" + CodePostal + "', Ville = '" + Ville + "',Telephone = '" + Telephone + "',DateCommande = '" + DateCommande + "',Type = '" + Type +"',Marque = '" + Marque +  "',Quantite = '" + Quantite + "',PrixUnitaire = '" + PrixUnitaire + "',TotalTTC = '" + TotalTTC + "',Commentaire = '" + Commentaire + "' WHERE ID = '" + IDBuffer + "'", Connect);
+		SqlCommand^ command = gcnew SqlCommand("UPDATE Facture SET Nom = '" + Nom + "' , Prenom = '" + Prenom + "', Adresse = '" + Adresse + "', CodePostal = '" + CodePostal + "', Ville = '" + Ville + "',Telephone = '" + Telephone + "',Email = '" + Email + "',DateCommande = '" + DateCommande + "',Type = '" + Type +"',Marque = '" + Marque +  "',Quantite = '" + Quantite + "',PrixUnitaire = '" + PrixUnitaire + "',TotalTTC = '" + TotalTTC + "',Commentaire = '" + Commentaire + "',Etat = '" + Etat + "' WHERE ID = '" + IDBuffer + "'", Connect);
 		command->ExecuteNonQuery();
 	
 }

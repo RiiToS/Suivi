@@ -93,6 +93,9 @@ namespace Suivi {
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::ComboBox^ comboBox3;
+	private: System::Windows::Forms::Button^ button8;
 
 
 
@@ -124,6 +127,8 @@ namespace Suivi {
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->label3 = (gcnew System::Windows::Forms::Label());
 			   this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			   this->label14 = (gcnew System::Windows::Forms::Label());
+			   this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			   this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			   this->label13 = (gcnew System::Windows::Forms::Label());
 			   this->textBox7 = (gcnew System::Windows::Forms::TextBox());
@@ -154,6 +159,7 @@ namespace Suivi {
 			   this->label4 = (gcnew System::Windows::Forms::Label());
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			   this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			   this->button8 = (gcnew System::Windows::Forms::Button());
 			   this->groupBox1->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
@@ -211,6 +217,9 @@ namespace Suivi {
 			   // 
 			   // groupBox1
 			   // 
+			   this->groupBox1->Controls->Add(this->button8);
+			   this->groupBox1->Controls->Add(this->label14);
+			   this->groupBox1->Controls->Add(this->comboBox3);
 			   this->groupBox1->Controls->Add(this->textBox5);
 			   this->groupBox1->Controls->Add(this->label13);
 			   this->groupBox1->Controls->Add(this->textBox7);
@@ -253,6 +262,24 @@ namespace Suivi {
 			   this->groupBox1->Text = L"Client";
 			   this->groupBox1->Enter += gcnew System::EventHandler(this, &Gestion::groupBox1_Enter);
 			   // 
+			   // label14
+			   // 
+			   this->label14->AutoSize = true;
+			   this->label14->Location = System::Drawing::Point(6, 536);
+			   this->label14->Name = L"label14";
+			   this->label14->Size = System::Drawing::Size(79, 13);
+			   this->label14->TabIndex = 54;
+			   this->label14->Text = L"Etat de relance";
+			   // 
+			   // comboBox3
+			   // 
+			   this->comboBox3->FormattingEnabled = true;
+			   this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"En cours ", L"Terminé" });
+			   this->comboBox3->Location = System::Drawing::Point(6, 552);
+			   this->comboBox3->Name = L"comboBox3";
+			   this->comboBox3->Size = System::Drawing::Size(243, 21);
+			   this->comboBox3->TabIndex = 53;
+			   // 
 			   // textBox5
 			   // 
 			   this->textBox5->Location = System::Drawing::Point(6, 277);
@@ -284,7 +311,6 @@ namespace Suivi {
 			   this->label8->Size = System::Drawing::Size(58, 13);
 			   this->label8->TabIndex = 49;
 			   this->label8->Text = L"Téléphone";
-			   this->label8->Click += gcnew System::EventHandler(this, &Gestion::label8_Click);
 			   // 
 			   // richTextBox1
 			   // 
@@ -317,11 +343,11 @@ namespace Suivi {
 			   // 
 			   // button7
 			   // 
-			   this->button7->Location = System::Drawing::Point(100, 793);
+			   this->button7->Location = System::Drawing::Point(100, 829);
 			   this->button7->Name = L"button7";
 			   this->button7->Size = System::Drawing::Size(86, 30);
 			   this->button7->TabIndex = 21;
-			   this->button7->Text = L"Annuler";
+			   this->button7->Text = L"Retour";
 			   this->button7->UseVisualStyleBackColor = true;
 			   this->button7->Click += gcnew System::EventHandler(this, &Gestion::button7_Click);
 			   // 
@@ -369,7 +395,6 @@ namespace Suivi {
 			   this->textBox3->Name = L"textBox3";
 			   this->textBox3->Size = System::Drawing::Size(243, 20);
 			   this->textBox3->TabIndex = 4;
-			   this->textBox3->TextChanged += gcnew System::EventHandler(this, &Gestion::textBox3_TextChanged);
 			   // 
 			   // numericUpDown5
 			   // 
@@ -428,7 +453,7 @@ namespace Suivi {
 			   this->button4->Name = L"button4";
 			   this->button4->Size = System::Drawing::Size(86, 30);
 			   this->button4->TabIndex = 23;
-			   this->button4->Text = L"Quitter";
+			   this->button4->Text = L"Déconnexion";
 			   this->button4->UseVisualStyleBackColor = true;
 			   this->button4->Click += gcnew System::EventHandler(this, &Gestion::button4_Click);
 			   // 
@@ -514,12 +539,14 @@ namespace Suivi {
 			   this->dataGridView1->MultiSelect = false;
 			   this->dataGridView1->Name = L"dataGridView1";
 			   this->dataGridView1->ReadOnly = true;
+			   this->dataGridView1->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Sunken;
 			   this->dataGridView1->RowHeadersWidth = 51;
 			   this->dataGridView1->RowTemplate->Height = 48;
 			   this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			   this->dataGridView1->Size = System::Drawing::Size(1565, 866);
 			   this->dataGridView1->TabIndex = 7;
 			   this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gestion::dataGridView1_CellContentClick);
+			  
 			   // 
 			   // richTextBox2
 			   // 
@@ -528,6 +555,16 @@ namespace Suivi {
 			   this->richTextBox2->Size = System::Drawing::Size(1863, 35);
 			   this->richTextBox2->TabIndex = 8;
 			   this->richTextBox2->Text = L"";
+			   // 
+			   // button8
+			   // 
+			   this->button8->Location = System::Drawing::Point(100, 793);
+			   this->button8->Name = L"button8";
+			   this->button8->Size = System::Drawing::Size(86, 30);
+			   this->button8->TabIndex = 55;
+			   this->button8->Text = L"En cours";
+			   this->button8->UseVisualStyleBackColor = true;
+			   this->button8->Click += gcnew System::EventHandler(this, &Gestion::button8_Click);
 			   // 
 			   // Gestion
 			   // 
@@ -556,6 +593,7 @@ namespace Suivi {
 				   this->textBox3->Text = "";
 				   this->textBox4->Text = "";
 				   this->textBox7->Text = "";
+				   this->textBox5->Text = "";
 				   this->comboBox1->Text = "";
 				   this->textBox6->Text = "";
 				   this->comboBox2->Text = "";
@@ -564,11 +602,12 @@ namespace Suivi {
 				   this->numericUpDown5->Value = 0;
 				   this->richTextBox1->Text = "";
 				   this->richTextBox2->Text = "";
+				   this->comboBox3->Text = "";
 			   }
 	
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);//valeur de gestion en paramètre
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text,textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text, comboBox3->Text);//valeur de gestion en paramètre
 			nouvFact.CreerFacture(link);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);//selection de la table de la BDD
 			DataSet^ ds = gcnew DataSet();
@@ -582,6 +621,7 @@ namespace Suivi {
 			this->textBox3->Text = "";
 			this->textBox4->Text = "";
 			this->textBox7->Text = "";
+			this->textBox7->Text = "";
 			this->comboBox1->Text = "";
 			this->textBox6->Text = "";
 			this->comboBox2->Text = "";
@@ -589,6 +629,7 @@ namespace Suivi {
 			this->numericUpDown3->Value = 0;
 			this->numericUpDown5->Value = 0;
 			this->richTextBox1->Text = "";
+			this->comboBox3->Text = "";
 			
 	}
 	else {
@@ -605,6 +646,7 @@ namespace Suivi {
 		textBox3->Text = row->Cells["CodePostal"]->Value->ToString();
 		textBox4->Text = row->Cells["Ville"]->Value->ToString();
 		textBox7->Text = row->Cells["Telephone"]->Value->ToString();
+		textBox5->Text = row->Cells["Email"]->Value->ToString();
 		comboBox1->Text = row->Cells["Type"]->Value->ToString();
 		comboBox2->Text = row->Cells["Marque"]->Value->ToString();
 		numericUpDown2->Value = Convert::ToDecimal(row->Cells["Quantite"]->Value);
@@ -613,6 +655,7 @@ namespace Suivi {
 		dateTimePicker1->Value = DateTime::ParseExact(row->Cells["DateCommande"]->Value->ToString()->Substring(0, 10), "dd/MM/yyyy", Globalization::CultureInfo::InvariantCulture);
 		ID_Tampon = row->Cells["ID"]->Value->ToString();
 		richTextBox1->Text = row->Cells["Commentaire"]->Value->ToString();
+		comboBox3->Text = row->Cells["Etat"]->Value->ToString();
 	}
 	private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -623,7 +666,7 @@ namespace Suivi {
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (MessageBox::Show("Êtes vous sûr ?", "Validation", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 		if ((!String::IsNullOrWhiteSpace(textBox1->Text)) && (!String::IsNullOrWhiteSpace(textBox2->Text)) && (!String::IsNullOrWhiteSpace(textBox3->Text)) && (!String::IsNullOrWhiteSpace(textBox4->Text)) && (!String::IsNullOrWhiteSpace(comboBox1->Text))) {
-			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
+			CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, textBox5->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."),  numericUpDown5->Text->Replace(",", "."), richTextBox1->Text,comboBox3->Text);
 			nouvFact.ModifierFacture(link, ID_Tampon);
 			SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
 			DataSet^ ds = gcnew DataSet();
@@ -637,6 +680,7 @@ namespace Suivi {
 			this->textBox3->Text = "";
 			this->textBox4->Text = "";
 			this->textBox7->Text = "";
+			this->textBox5->Text = "";
 			this->comboBox1->Text = "";
 			this->textBox6->Text = "";
 			this->comboBox2->Text = "";
@@ -644,6 +688,7 @@ namespace Suivi {
 			this->numericUpDown3->Value = 0;
 			this->numericUpDown5->Value = 0;
 			this->richTextBox1->Text = "";
+			this->comboBox3->Text = "";
 		}
 		else {
 			richTextBox2->Text = "La modification de la Facture n'a pas fonctionné";
@@ -658,7 +703,7 @@ namespace Suivi {
 	}
 
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
+	CL_Gestion nouvFact(textBox1->Text, textBox6->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, textBox5->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text,comboBox3->Text);
 	String^ Request = nouvFact.AfficherFacture();						 //methode afficherPersonnel renvoie la requete sous forme de String
 	SqlDataAdapter^ da = gcnew SqlDataAdapter(Request, link);
 	DataSet^ ds = gcnew DataSet();
@@ -669,7 +714,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	delete da;
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, textBox6->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text);
+	CL_Gestion nouveauPers(textBox1->Text, textBox2->Text, textBox3->Text, textBox4->Text, textBox7->Text, textBox5->Text, dateTimePicker1->Value.ToString("dd/MM/yyyy"), comboBox1->Text, textBox6->Text, comboBox2->Text, (int)numericUpDown2->Value, numericUpDown3->Text->Replace(",", "."), numericUpDown5->Text->Replace(",", "."), richTextBox1->Text, comboBox3->Text);
 	if (MessageBox::Show("Êtes vous sûr ?", "Validation", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
 	nouveauPers.SupprimerFacture(link, ID_Tampon);
 	SqlDataAdapter^ da = gcnew SqlDataAdapter("SELECT * FROM Facture", link);
@@ -683,15 +728,14 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		
 	}
 }
-
-	   void displayDGV(String^ query) {
-		   da = gcnew SqlDataAdapter(query, link);
-		   ds = gcnew DataSet();
-		   da->Fill(ds, "Display");
-		   dataGridView1->DataSource = ds->Tables["Display"]->DefaultView;
-		   delete da;
-		   delete ds;
-	   }
+ void displayDGV(String^ query) {
+	 da = gcnew SqlDataAdapter(query, link);
+	 ds = gcnew DataSet();
+	 da->Fill(ds, "Display");
+	 dataGridView1->DataSource = ds->Tables["Display"]->DefaultView;
+	 delete da;
+	 delete ds;
+ }
 
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	displayDGV(Relance());//fonction pour afficher la requête SQL
@@ -700,12 +744,14 @@ private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	CancelFacture();//fonction cancel pour vider les textbox
-	dataGridView1->DataSource = ds->Tables["Facture"]->DefaultView;
+	displayDGV(retour());
+	
+	
 }
 
-private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	displayDGV(Encours());
 }
 };
 }
