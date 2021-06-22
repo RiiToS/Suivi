@@ -115,10 +115,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="MindFusion.Charting">
+      <HintPath>MindFusion.Charting</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Charting.WinForms">
+      <HintPath>..\..\..\..\..\Program Files (x86)\MindFusion\MindFusion.Charting for WinForms\CLR4 (.NET 4.5)\MindFusion.Charting.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common">
+      <HintPath>MindFusion.Common</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Licensing">
+      <HintPath>MindFusion.Licensing</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Pdf">
+      <HintPath>MindFusion.Pdf</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Svg">
+      <HintPath>MindFusion.Svg</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>

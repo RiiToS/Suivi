@@ -32,7 +32,7 @@ String^ CL_Gestion::AfficherFacture() {//fonction affichage
 	return Request;
 }
 void CL_Gestion::CreerFacture(SqlConnection^ Connect) {//fonction créer 
-		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom,Prenom, Adresse, CodePostal, Ville,Telephone,Email, DateCommande, Type, Marque, Quantite, PrixUnitaire, TotalTTC, Commentaire) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + Telephone + "', '" + Email + "','" + DateCommande + "', '" + Type + "', '"+ Marque + "', '"  + Quantite + "', '" + PrixUnitaire + "', '" + TotalTTC +"' , '" + Commentaire + "', '" + Etat + "')", Connect);
+		SqlCommand^ command = gcnew SqlCommand("INSERT INTO Facture (Nom,Prenom, Adresse, CodePostal, Ville,Telephone,Email, DateCommande, Type, Marque, Quantite, PrixUnitaire, TotalTTC, Commentaire,Etat) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + Telephone + "', '" + Email + "','" + DateCommande + "', '" + Type + "', '"+ Marque + "', '"  + Quantite + "', '" + PrixUnitaire + "', '" + TotalTTC +"' , '" + Commentaire + "', '" + Etat + "')", Connect);
 		command->ExecuteNonQuery();
 
 }

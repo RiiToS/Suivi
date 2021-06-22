@@ -96,9 +96,9 @@ namespace Suivi {
 			this->label1->Location = System::Drawing::Point(9, 7);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(161, 26);
+			this->label1->Size = System::Drawing::Size(167, 26);
 			this->label1->TabIndex = 6;
-			this->label1->Text = L"\tBienvenue, veuillez\r\nséléctionner l\'opération souhaité.";
+			this->label1->Text = L"\tBienvenue, veuillez\r\nséléctionner l\'opération souhaitée.";
 			// 
 			// button2
 			// 
