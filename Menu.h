@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Client.h"
 namespace Suivi {
 
 	using namespace System;
@@ -45,6 +45,7 @@ namespace Suivi {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
 
 	private:
 		/// <summary>
@@ -66,6 +67,7 @@ namespace Suivi {
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -81,7 +83,7 @@ namespace Suivi {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(183, 45);
+			this->button6->Location = System::Drawing::Point(268, 45);
 			this->button6->Margin = System::Windows::Forms::Padding(2);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(82, 41);
@@ -111,11 +113,23 @@ namespace Suivi {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Menu::button2_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(182, 45);
+			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(82, 41);
+			this->button3->TabIndex = 8;
+			this->button3->Text = L"Client";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Menu::button3_Click);
+			// 
 			// Menu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(276, 94);
+			this->ClientSize = System::Drawing::Size(361, 104);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button6);
@@ -146,6 +160,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->Hide();
 	Suivi::Gestion Gestion(link);
 	Gestion.ShowDialog();
+	this->Show();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	Suivi::Client Client(link);
+	Client.ShowDialog();
 	this->Show();
 }
 };

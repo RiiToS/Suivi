@@ -17,4 +17,9 @@ namespace Suivi {
 		String^ Requete = "SELECT * FROM Facture  "; //REquête SQL pour trier les dates d'il y a 1 ans 
 		return Requete;
 	}
+	String^ retourC() {
+		//String^ Requete = "SELECT DateCommande FROM Facture WHERE DateCommande = NOW() - 11";
+		String^ Requete = "SELECT * FROM Client  "; //REquête SQL pour trier les dates d'il y a 1 ans 
+		return Requete;
+	}
 }

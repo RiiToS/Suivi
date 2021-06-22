@@ -25,6 +25,7 @@ private:
 public:
 	CL_Gestion(String^ N, String^ P, String^ Adr, String^ CP, String^ Vi, String^ TEL, String^ MAIL, String^ DC, String^ Ty, String^ Mrq, int Qt, String^ PU,String^ TTTC, String^ Com, String^ ATM );
 	String^ AfficherFacture();
+	
 	void CreerFacture(SqlConnection^ Connect);
 	void ModifierFacture(SqlConnection^ Connect, String^ IDBuffer);
 	void SupprimerFacture(SqlConnection^ Connect, String^ IDBuffer);

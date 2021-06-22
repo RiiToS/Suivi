@@ -142,11 +142,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CL_Client.cpp" />
     <ClCompile Include="CL_Gestion.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CL_Stats.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CL_Client.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CL_Gestion.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -164,6 +171,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Gestion.resx">
       <DependentUpon>Gestion.h</DependentUpon>
     </EmbeddedResource>
