@@ -1,4 +1,5 @@
 #pragma once
+
 using namespace System;
 
 namespace Suivi {
@@ -20,6 +21,10 @@ namespace Suivi {
 	String^ retourC() {
 		//String^ Requete = "SELECT DateCommande FROM Facture WHERE DateCommande = NOW() - 11";
 		String^ Requete = "SELECT * FROM Client  "; //REquête SQL pour trier les dates d'il y a 1 ans 
+		return Requete;
+	}
+	String^ NbClient() {
+		String^ Requete = "SELECT SUM(I) From Client WHERE YEAR(Date1erCommande) = '2019'";
 		return Requete;
 	}
 }

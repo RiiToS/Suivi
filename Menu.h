@@ -1,5 +1,6 @@
 #pragma once
 #include "Client.h"
+#include "Stats.h"
 namespace Suivi {
 
 	using namespace System;
@@ -72,10 +73,9 @@ namespace Suivi {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(11, 45);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(14, 55);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(82, 41);
+			this->button1->Size = System::Drawing::Size(109, 51);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Facture";
 			this->button1->UseVisualStyleBackColor = true;
@@ -83,10 +83,9 @@ namespace Suivi {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(268, 45);
-			this->button6->Margin = System::Windows::Forms::Padding(2);
+			this->button6->Location = System::Drawing::Point(357, 55);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(82, 41);
+			this->button6->Size = System::Drawing::Size(109, 51);
 			this->button6->TabIndex = 5;
 			this->button6->Text = L"Déconnexion";
 			this->button6->UseVisualStyleBackColor = true;
@@ -95,19 +94,17 @@ namespace Suivi {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(9, 7);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(12, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(167, 26);
+			this->label1->Size = System::Drawing::Size(212, 32);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"\tBienvenue, veuillez\r\nséléctionner l\'opération souhaitée.";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(97, 45);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Location = System::Drawing::Point(130, 55);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(82, 41);
+			this->button2->Size = System::Drawing::Size(109, 51);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Statistique";
 			this->button2->UseVisualStyleBackColor = true;
@@ -115,10 +112,9 @@ namespace Suivi {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(182, 45);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Location = System::Drawing::Point(243, 55);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(82, 41);
+			this->button3->Size = System::Drawing::Size(109, 51);
 			this->button3->TabIndex = 8;
 			this->button3->Text = L"Client";
 			this->button3->UseVisualStyleBackColor = true;
@@ -126,15 +122,17 @@ namespace Suivi {
 			// 
 			// Menu
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(361, 104);
+			this->BackColor = System::Drawing::SystemColors::Control;
+			this->ClientSize = System::Drawing::Size(482, 128);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->Name = L"Menu";
 			this->Text = L"Gestion";
 			this->Load += gcnew System::EventHandler(this, &Menu::Menu_Load);
@@ -158,8 +156,8 @@ namespace Suivi {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	Suivi::Gestion Gestion(link);
-	Gestion.ShowDialog();
+	Suivi::Stats Stats(link);
+	Stats.ShowDialog();
 	this->Show();
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
