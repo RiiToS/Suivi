@@ -47,6 +47,7 @@ namespace Suivi {
 		DataSet^ ds;
 		String^ ID_Tampon;
 		String^ ID;
+		String^ ID_Client;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	protected:
 	private: System::Windows::Forms::Label^ label13;
@@ -130,7 +131,7 @@ namespace Suivi {
 			// textBox5
 			// 
 			this->textBox5->Location = System::Drawing::Point(8, 238);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(239, 22);
 			this->textBox5->TabIndex = 5;
@@ -148,7 +149,7 @@ namespace Suivi {
 			// textBox7
 			// 
 			this->textBox7->Location = System::Drawing::Point(8, 334);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(239, 22);
 			this->textBox7->TabIndex = 7;
@@ -166,7 +167,7 @@ namespace Suivi {
 			// textBox6
 			// 
 			this->textBox6->Location = System::Drawing::Point(8, 286);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(239, 22);
 			this->textBox6->TabIndex = 6;
@@ -184,7 +185,7 @@ namespace Suivi {
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(8, 135);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(239, 22);
 			this->textBox3->TabIndex = 3;
@@ -192,7 +193,7 @@ namespace Suivi {
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(8, 183);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(239, 22);
 			this->textBox4->TabIndex = 4;
@@ -210,7 +211,7 @@ namespace Suivi {
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->Location = System::Drawing::Point(8, 382);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(239, 22);
 			this->dateTimePicker1->TabIndex = 8;
@@ -228,7 +229,7 @@ namespace Suivi {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(8, 39);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(239, 22);
 			this->textBox1->TabIndex = 1;
@@ -266,7 +267,7 @@ namespace Suivi {
 			// textBox2
 			// 
 			this->textBox2->Location = System::Drawing::Point(8, 87);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(239, 22);
 			this->textBox2->TabIndex = 2;
@@ -300,9 +301,9 @@ namespace Suivi {
 			this->groupBox1->Controls->Add(this->label10);
 			this->groupBox1->Controls->Add(this->textBox4);
 			this->groupBox1->Location = System::Drawing::Point(16, 14);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(267, 772);
 			this->groupBox1->TabIndex = 69;
 			this->groupBox1->TabStop = false;
@@ -312,7 +313,7 @@ namespace Suivi {
 			// button8
 			// 
 			this->button8->Location = System::Drawing::Point(130, 682);
-			this->button8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button8->Margin = System::Windows::Forms::Padding(4);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(115, 37);
 			this->button8->TabIndex = 80;
@@ -333,16 +334,17 @@ namespace Suivi {
 			// richTextBox2
 			// 
 			this->richTextBox2->Location = System::Drawing::Point(8, 442);
-			this->richTextBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->richTextBox2->Margin = System::Windows::Forms::Padding(4);
 			this->richTextBox2->Name = L"richTextBox2";
 			this->richTextBox2->Size = System::Drawing::Size(239, 118);
 			this->richTextBox2->TabIndex = 78;
 			this->richTextBox2->Text = L"";
+			this->richTextBox2->TextChanged += gcnew System::EventHandler(this, &Client::richTextBox2_TextChanged);
 			// 
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(130, 638);
-			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(115, 37);
 			this->button6->TabIndex = 77;
@@ -353,7 +355,7 @@ namespace Suivi {
 			// button7
 			// 
 			this->button7->Location = System::Drawing::Point(130, 725);
-			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(115, 37);
 			this->button7->TabIndex = 71;
@@ -364,7 +366,7 @@ namespace Suivi {
 			// button5
 			// 
 			this->button5->Location = System::Drawing::Point(8, 682);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(115, 37);
 			this->button5->TabIndex = 74;
@@ -375,7 +377,7 @@ namespace Suivi {
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(8, 725);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(115, 37);
 			this->button4->TabIndex = 73;
@@ -386,7 +388,7 @@ namespace Suivi {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(8, 638);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(115, 37);
 			this->button3->TabIndex = 72;
@@ -397,7 +399,7 @@ namespace Suivi {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(8, 594);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(115, 37);
 			this->button2->TabIndex = 70;
@@ -408,7 +410,7 @@ namespace Suivi {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(130, 594);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(115, 37);
 			this->button1->TabIndex = 76;
@@ -419,7 +421,7 @@ namespace Suivi {
 			// richTextBox1
 			// 
 			this->richTextBox1->Location = System::Drawing::Point(16, 794);
-			this->richTextBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->richTextBox1->Margin = System::Windows::Forms::Padding(4);
 			this->richTextBox1->Name = L"richTextBox1";
 			this->richTextBox1->Size = System::Drawing::Size(1355, 38);
 			this->richTextBox1->TabIndex = 71;
@@ -429,7 +431,7 @@ namespace Suivi {
 			// 
 			this->dataGridView10->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView10->Location = System::Drawing::Point(306, 30);
-			this->dataGridView10->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView10->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView10->MultiSelect = false;
 			this->dataGridView10->Name = L"dataGridView10";
 			this->dataGridView10->ReadOnly = true;
@@ -452,7 +454,7 @@ namespace Suivi {
 			this->Controls->Add(this->groupBox1);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Client";
 			this->Text = L"Client";
 			this->Load += gcnew System::EventHandler(this, &Client::Client_Load);
@@ -588,6 +590,8 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	delete ds;
 }
 private: System::Void Client_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void richTextBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 

@@ -25,13 +25,13 @@ String^ CL_Client::AfficherClient() {//fonction affichage
 	return Request;
 }
 void CL_Client::CreerClient(SqlConnection^ Connect) {//fonction créer 
-	SqlCommand^ command = gcnew SqlCommand("INSERT INTO Client (Nom,Prenom, Adresse, CodePostal, Ville,Telephone,Email, DateCommande, Commentaire) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + Telephone + "', '" + Email + "','" + Date1erAchat + "','" + Commentaire + "')", Connect);
+	SqlCommand^ command = gcnew SqlCommand("INSERT INTO Client (Nom,Prenom, Adresse, CodePostal, Ville,Telephone,Email, Date1erAchat, Commentaire) VALUES ('" + Nom + "', '" + Prenom + "','" + Adresse + "','" + CodePostal + "', '" + Ville + "', '" + Telephone + "', '" + Email + "','" + Date1erAchat + "','" + Commentaire + "')", Connect);
 	command->ExecuteNonQuery();
 
 }
 
 void CL_Client::ModifierClient(SqlConnection^ Connect, String^ IDBuffer) {//fonction modifier
-	SqlCommand^ command = gcnew SqlCommand("UPDATE Client SET Nom = '" + Nom + "' , Prenom = '" + Prenom + "', Adresse = '" + Adresse + "', CodePostal = '" + CodePostal + "', Ville = '" + Ville + "',Telephone = '" + Telephone + "',Email = '" + Email + "',Date1erAchat = '" + Date1erAchat + "',Commentaire = '" + Commentaire + "'" + IDBuffer + "'", Connect);
+	SqlCommand^ command = gcnew SqlCommand("UPDATE Client SET Nom = '" + Nom + "' , Prenom = '" + Prenom + "', Adresse = '" + Adresse + "', CodePostal = '" + CodePostal + "', Ville = '" + Ville + "',Telephone = '" + Telephone + "',Email = '" + Email + "',Date1erAchat = '" + Date1erAchat + "',Commentaire = '" + Commentaire + "' WHERE ID_Client ='" + IDBuffer + "'", Connect);
 	command->ExecuteNonQuery();
 
 }
