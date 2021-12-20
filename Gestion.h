@@ -418,10 +418,11 @@ namespace Suivi {
 			   this->comboBox1->Name = L"comboBox1";
 			   this->comboBox1->Size = System::Drawing::Size(207, 24);
 			   this->comboBox1->TabIndex = 7;
+			   this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Gestion::comboBox1_SelectedIndexChanged);
 			   // 
 			   // button7
 			   // 
-			   this->button7->Location = System::Drawing::Point(6, 71);
+			   this->button7->Location = System::Drawing::Point(118, 487);
 			   this->button7->Name = L"button7";
 			   this->button7->Size = System::Drawing::Size(96, 30);
 			   this->button7->TabIndex = 21;
@@ -494,7 +495,7 @@ namespace Suivi {
 			   // 
 			   // button4
 			   // 
-			   this->button4->Location = System::Drawing::Point(109, 71);
+			   this->button4->Location = System::Drawing::Point(7, 71);
 			   this->button4->Name = L"button4";
 			   this->button4->Size = System::Drawing::Size(95, 30);
 			   this->button4->TabIndex = 23;
@@ -594,6 +595,7 @@ namespace Suivi {
 			   // 
 			   this->groupBox2->Controls->Add(this->label4);
 			   this->groupBox2->Controls->Add(this->label15);
+			   this->groupBox2->Controls->Add(this->button7);
 			   this->groupBox2->Controls->Add(this->label12);
 			   this->groupBox2->Controls->Add(this->numericUpDown5);
 			   this->groupBox2->Controls->Add(this->numericUpDown3);
@@ -626,7 +628,6 @@ namespace Suivi {
 			   // 
 			   this->groupBox3->Controls->Add(this->button8);
 			   this->groupBox3->Controls->Add(this->button4);
-			   this->groupBox3->Controls->Add(this->button7);
 			   this->groupBox3->Controls->Add(this->button6);
 			   this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
@@ -732,7 +733,8 @@ namespace Suivi {
 		}
 		else if (groupBox2->Enabled) {
 			
-			comboBox2->Text = row->Cells["Marque"]->Value->ToString();
+			comboBox1->Text = row->Cells["Marque"]->Value->ToString();
+			comboBox2->Text = row->Cells["Type"]->Value->ToString();
 			numericUpDown2->Value = Convert::ToDecimal(row->Cells["Quantite"]->Value);
 			numericUpDown3->Value = Convert::ToDecimal(row->Cells["Prixunitaire"]->Value);
 			numericUpDown5->Value = Convert::ToDecimal(row->Cells["TotalTTC"]->Value);
@@ -870,6 +872,8 @@ private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ 
 	this->textBox5->Text = "";
 	this->textBox6->Text = "";
 	this->textBox7->Text = "";
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
